@@ -1,14 +1,15 @@
 "use client"
-
 import React, { useState } from 'react';
 import './Banner.css';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 
 const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleNextClick = () => {
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextInt);
+    setActiveIndex(nextIndex);
   };
 
   const handlePrevClick = () => {
@@ -69,10 +70,10 @@ const Banner = () => {
 
       <div className="button">
         <button className="prev" onClick={handlePrevClick}>
-          <i className="fa-solid fa-arrow-left"></i>
+        <FaArrowLeft className='ms-2 text-black'/>
         </button>
         <button className="next" onClick={handleNextClick}>
-          <i className="fa-solid fa-arrow-right"></i>
+        <FaArrowRight className='ms-2 text-black'/>
         </button>
       </div>
     </div>
