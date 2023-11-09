@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import '../../app/globals.css'
+import './../globals.css'
 import Home from '@/Components/Home/Home'
 import Footer from '@/Components/Footer/Footer'
 import Banner from '@/Components/Banner/Banner'
@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
   <div className="max-w-screen-xl mx-auto">
         <Home />
-   
-       <Browse/>
+        <Banner/> 
+    <Browse/>
       <body className={inter.className}>{children}</body>
       <Footer />
       </div>

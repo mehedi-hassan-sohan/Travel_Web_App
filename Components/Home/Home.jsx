@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Home = () => {
     return (
         <div>
-            <div className='flex justify-around '>
+            <div className=' flex justify-around '>
                 <Image src={HomeLogo} height={100} width={100} alt='Home Logo' />
                 <form className='mt-7'>  
                     <div className="relative">

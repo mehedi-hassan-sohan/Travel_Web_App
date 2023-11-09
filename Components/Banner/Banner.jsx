@@ -1,82 +1,72 @@
-"use client"
-import React, { useState } from 'react';
-import './Banner.css';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
+import React from 'react';
+import './Banner.css'
+import Image from 'next/image';
 
 const Banner = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleNextClick = () => {
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  };
-
-  const handlePrevClick = () => {
-    const prevIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(prevIndex);
-  };
-
-  const items = [
-    {
-      backgroundImage: 'https://i.ibb.co/qCkd9jS/img1.jpg',
-      name: 'Switzerland',
-      des: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
-    },
-    {
-      backgroundImage: 'https://i.ibb.co/jrRb11q/img2.jpg',
-      name: 'Finland',
-      des: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
-    },
-    {
-      backgroundImage: 'https://i.ibb.co/NSwVv8D/img3.jpg',
-      name: 'Iceland',
-      des: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
-    },
-    {
-      backgroundImage: 'https://i.ibb.co/Bq4Q0M8/img4.jpg',
-      name: 'Australia',
-      des: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
-    },
-    {
-      backgroundImage: 'https://i.ibb.co/jTQfmTq/img5.jpg',
-      name: 'Netherland',
-      des: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
-    },
-    {
-      backgroundImage: 'https://i.ibb.co/RNkk6L0/img6.jpg',
-      name: 'Ireland',
-      des: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
-    },
-  ];
-
   return (
-    <div className="container">
-      <div className="slide">
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className={`item ${activeIndex === index && 'active'}`}
-            style={{ backgroundImage: `url(${item.backgroundImage})` }}
-          >
-            <div className="content">
-              <div className="name">{item.name}</div>
-              <div className="des">{item.des}</div>
-              <button>See More</button>
-            </div>
-          </div>
-        ))}
+    <>
+        <h1 className='text-center text-5xl absolute  mt-[50px] ms-[370px] font-[Caveat ,cursive] text-[#004953] italic'> ExploreWorlds: Your Gateway <br /> to Unforgettable Journeys</h1>
+   <div className='background-image'>
+   <form class="w-full max-w-lg mb-48">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          First Name
+        </label>
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/>
+        <p class="text-red-500 text-xs italic">Please fill out this field.</p>
       </div>
-
-      <div className="button">
-        <button className="prev" onClick={handlePrevClick}>
-        <FaArrowLeft className='ms-2 text-black'/>
-        </button>
-        <button className="next" onClick={handleNextClick}>
-        <FaArrowRight className='ms-2 text-black'/>
-        </button>
+      <div class="w-full md:w-1/2 px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+          Last Name
+        </label>
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"/>
       </div>
     </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+         Email
+        </label>
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="Type Your Email"/>
+        <p class="text-gray-600 text-xs italic">Make it as long and as crazy as youd like</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-2">
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+          Booking-Spot
+        </label>
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque"/>
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+          State
+        </label>
+        <div class="relative">
+          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <option>New Mexico</option>
+            <option>Missouri</option>
+            <option>Texas</option>
+            <option>america</option>
+            <option>Los Angelo</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+     Booking Data
+        </label>
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="date" placeholder="90210"/>
+      </div>
+    </div>
+  </form> 
+
+   </div>
+  </>
   );
 };
 
